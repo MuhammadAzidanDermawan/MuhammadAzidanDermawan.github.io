@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Web M.Azidan Dermawan</title>
+  <title>Web Saya</title>
 
   <style>
     body {
@@ -17,98 +17,104 @@
       list-style: none;
       min-width: 100px;
       margin: 8px;
-      padding: 4px;
       background: black;
       color: white;
+      border-radius: 6px;
+      padding: 8px;
+      cursor: pointer;
     }
 
     nav>ul>li:hover {
       background: white;
       border: 1px solid black;
       color: black;
-      cursor: pointer;
+
     }
 
-    .card {
-      border: 4px dotted black;
-      margin-bottom: 12px;
+  .card {
+    border:4px dotted black;
+    margin-bottom: 12px;
+  }
+
+    .card>p {
+      text-align: justify;
+      padding:8px;
     }
 
-    #daftarKomentar {
-      text-align: left;
+    #daftarKomentar>li {
+      
+      text-align:left;
+      list-style: none;
     }
 
     #daftarKomentar>li>span {
       font-weight: 700;
     }
-
-
-
-    .btn {
-      width: 25%;
-      margin: 8px;
-      padding: 10px;
-      border-radius: 10em;
-    }
-
-    .form-control {
-      text-align: center;
-      margin-bottom: 8px;
-    }
   </style>
 </head>
 
 <body>
-  <h1>Jaisy CV</h1>
+  <h1>Jaisy A.S</h1>
 
   <nav>
     <ul>
-      <li>Menu Lainnya</li>
-      <li>Isi Formulir</li>
+      <li>About</li>
+      <li>Form</li>
       <li>Komentar</li>
     </ul>
   </nav>
 
   <div class="card">
-    <h2>Tentang</h2>
-    <img src='https://picsum.photos/200/300?image=0' />
-    <p>Teruslah Belajar Karna Ilmu Tidak Memandang Usia</p>
+    <h2>About</h2>
+<img src="https://picsum.photos/200/300"/>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.</p>
   </div>
 
   <div class="card">
-    <h2>Kirim Komentar</h2>
+    <h2>Form</h2>
 
-    <form id="formKomentar" method="POST" action="#">
-      <div class="form-control">
-        <label for="nama">Nama Kamu</label>
-        <input type="text" placeholder="Nama kamu" id="nama" />
+    <form id="formKomentar" action="#" method="POST">
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" id="nama" placeholder="Nama kamu"/>
       </div>
 
-      <div class="form-control">
-        <label for="komentar">Komentar Kamu</label>
-        <textarea placeholder="Komentar kamu" id="komentar"></textarea>
+      <div class="form-group">
+        <label>Komentar</label>
+       <textarea placeholder="Komentar Kamu" id="komentar"></textarea>
+      </div> 
+
+      <div class="form-group">
+       <button type="submit">Kirim Komentar</button>
       </div>
 
-
-      <button class="btn" type="submit">Kirim</button>
     </form>
   </div>
 
   <div class="card">
-    <h2>Komentar Kamu</h2>
+    <h2>Komentar</h2>
+   
+
     <ul id="daftarKomentar">
-      <li><span>Denis</span> : Halo selamat belajar semuanya</li>
+      <li><span>Denis</span> : hiii</li>
     </ul>
   </div>
 
+
   <script>
-    const formKomentar = document.getElementById('formKomentar')
-    const daftarKomentar = document.getElementById('daftarKomentar')
-    const nama = document.getElementById('nama')
-    const komentar = document.getElementById('komentar')
+    const daftarKomentar=document.getElementById('daftarKomentar')
+    const formKomentar=document.getElementById('formKomentar')
+    const nama=document.getElementById('nama')
+    const komentar=document.getElementById('komentar')
 
     formKomentar.onsubmit=(e)=> {
       e.preventDefault()
+
       if(nama.value==''){
         alert('Nama kosong')
         return
@@ -124,10 +130,7 @@
       nama.value=''
       komentar.value=''
     }
-
   </script>
-
-
 </body>
 
 </html>
