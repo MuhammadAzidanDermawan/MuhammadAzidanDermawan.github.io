@@ -1,9 +1,4 @@
 <html>
-  <head>
-    <title>web saya</title>
-  </head>
-  <body>
-   <html>
 
 <head>
   <title>Web Saya</title>
@@ -35,15 +30,30 @@
     }
 
     .card {
-      border:4px dotted black;
-      margin-bottom:12px;
+      border: 4px dotted black;
+      margin-bottom: 12px;
     }
 
     #daftarKomentar {
-      text-align:left;
+      text-align: left;
     }
-    #daftarKomentar>li> span {
-      font-weight:700;
+
+    #daftarKomentar>li>span {
+      font-weight: 700;
+    }
+
+
+
+    .btn {
+      width: 25%;
+      margin: 8px;
+      padding: 10px;
+      border-radius: 10em;
+    }
+
+    .form-control {
+      text-align: center;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -61,17 +71,26 @@
 
   <div class="card">
     <h2>Tentang</h2>
-    <img src="https://picsum.photos/200" />
+    <img src='https://picsum.photos/200/300?image=0' />
     <p>Saya adalah seorang web developer</p>
   </div>
 
   <div class="card">
     <h2>Kirim Komentar</h2>
 
-    <form>
-      <input type="text" placeholder="Nama kamu"/>
-      <textarea placeholder="Komentar kamu"></textarea>
-      <button>Kirim</button>
+    <form id="formKomentar" method="POST" action="#">
+      <div class="form-control">
+        <label for="nama">Nama Kamu</label>
+        <input type="text" placeholder="Nama kamu" id="nama" />
+      </div>
+
+      <div class="form-control">
+        <label for="komentar">Komentar Kamu</label>
+        <textarea placeholder="Komentar kamu" id="komentar"></textarea>
+      </div>
+
+
+      <button class="btn" type="submit">Kirim</button>
     </form>
   </div>
 
@@ -81,6 +100,32 @@
       <li><span>Denis</span> : Halo ssemuanya</li>
     </ul>
   </div>
+
+  <script>
+    const formKomentar = document.getElementById('formKomentar')
+    const daftarKomentar = document.getElementById('daftarKomentar')
+    const nama = document.getElementById('nama')
+    const komentar = document.getElementById('komentar')
+
+    formKomentar.onsubmit=(e)=> {
+      e.preventDefault()
+      if(nama.value==''){
+        alert('Nama kosong')
+        return
+      }
+
+      if(komentar.value==''){
+        alert('Komentar kosong')
+        return
+      }
+
+      daftarKomentar.innerHTML+=`<li><span>${nama.value}</span> : ${komentar.value}</li>`
+
+      nama.value=''
+      komentar.value=''
+    }
+
+  </script>
 
 
 </body>
