@@ -75,16 +75,12 @@
     <form id="formKomentar" action="#" method="POST">
       <div class="form-group">
         <label>Nama</label>
-        <input type="text" id="nama" placeholder="Tulis Nama kamu"/>
+        <input type="text" id="nama" placeholder="Nama kamu"/>
       </div>
 
       <div class="form-group">
         <label>Komentar</label>
-       <textarea placeholder="Komentar tentang rasa nya" id="komentar"></textarea>
-      </div> 
-       <div class="form-group">
-        <label>berikan informasi rasa donat apa yang anda suka dan saya akan membuat nya</label>
-       <textarea placeholder="komentar" id="tulis disini bro"></textarea>
+       <textarea placeholder="Komentar Kamu" id="komentar"></textarea>
       </div> 
 
       <div class="form-group">
@@ -118,17 +114,12 @@
         return
       }
 
-      if(Komentar tentang rasa nya.value==''){
+      if(komentar.value==''){
         alert('Komentar kosong')
         return
       }
 
-       if(berikan informasi rasa donat apa yang anda suka dan saya akan membuat nya.value==''){
-        alert('Komentar kosong')
-        return
-      }
-
-      daftarKomentar.innerHTML+=`<li><span>${nama.value}</span> : ${komentar.value}</li>`
+      daftarKomentar.innerHTML+=<li><span>${nama.value}</span> : ${komentar.value}</li>
 
       nama.value=''
       komentar.value=''
